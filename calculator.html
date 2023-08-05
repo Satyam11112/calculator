@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<input type="text" id="firstNumber" placeholder="First Number">
+<input type="text" id="secondNumber" placeholder="Second Number">
+<select id="operator">
+<option value="add">+</option>
+<option value="subtract">-</option>
+<option value="divide">/</option>
+<option value="multiply">*</option>
+</select>
+<button onclick="calculate()">Calculate</button>
+<p id="result"></p>
+<script>
+function calculate() {
+  var firstNumber = document.getElementById("firstNumber").value;
+  var secondNumber = document.getElementById("secondNumber").value;
+  var operator = document.getElementById("operator").value;
+  var result = "";
+
+  switch (operator) {
+    case "add":
+      result = firstNumber + secondNumber;
+      break;
+    case "subtract":
+      result = firstNumber - secondNumber;
+      break;
+    case "divide":
+      result = firstNumber / secondNumber;
+      break;
+    case "multiply":
+      result = firstNumber * secondNumber;
+      break;
+    default:
+      result = "Invalid operator";
+      break;
+  }
+
+  document.getElementById("result").innerHTML = result;
+}
+</script>
+</body>
+</html>
